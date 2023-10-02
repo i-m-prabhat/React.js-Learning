@@ -1,9 +1,10 @@
 # React.js
 
 ### Official Documentation
-<a href="https://react.dev">Latest Docs</a>
-<a href="https://legacy.reactjs.org/">Old Docs</a>
-<a href="https://create-react-app.dev/">CRA</a>
+
+<a href="https://react.dev">Latest Docs</a> |
+<a href="https://legacy.reactjs.org/">Old Docs</a>  |
+<a href="https://create-react-app.dev/">CRA(create react app)</a>
 
 ## Introduction to React.js
 
@@ -24,6 +25,7 @@ Components in React are modular and reusable units of code that encapsulate a pi
 ### Basic Structure of an Application
 
 A typical React application can be divided into various components, such as:
+
 - Header
 - Body (Content)
 - Sidebar
@@ -31,6 +33,7 @@ A typical React application can be divided into various components, such as:
 ## React Installation Steps
 
 To set up a React development environment, follow these steps:
+
 1. Install Node.js and npm.
 2. Set up a text editor, like VS Code.
 3. Create a new React application using the command: `npx create-react-app App-Name`
@@ -67,6 +70,7 @@ JSX, which stands for JavaScript XML or Extension, is a syntax extension for Jav
 The `useState` hook is used to manage state in functional components. It returns the current state value and a function to update that value.
 
 Example:
+
 ```jsx
 const [count, setCount] = useState(0);
 const [data, setData] = useState("king");
@@ -77,6 +81,7 @@ const [data, setData] = useState("king");
 The `useEffect` hook is used for handling side effects in functional components, such as data fetching or DOM manipulation. It runs after the component has rendered.
 
 Example:
+
 ```jsx
 useEffect(() => {
     console.log("Component mounted");
@@ -88,6 +93,7 @@ useEffect(() => {
 The `useRef` hook is used for accessing and interacting with DOM elements in functional components.
 
 Example:
+
 ```jsx
 import React, { useRef } from "react";
 
@@ -99,7 +105,7 @@ function App() {
 }
 ```
 
-### Prop Drilling:
+### Prop Drilling
 
 Prop drilling is a situation where props need to be passed through multiple levels of nested components. This can be addressed using context API or custom hooks for better state management. <br/>
 Parent ➡ ChildA ➡ ChildB ➡ ChildC ➡ ChildD
@@ -126,7 +132,9 @@ const name = "prabhat";
     }
 </data.Consumer>
 ```
+
 Example:
+
 ```
 // parent component
 
@@ -188,6 +196,7 @@ export default Child;
 The `useContext` hook is used to consume values from the context in functional components.
 
 Example:
+
 ```
 import react,{createContext} from "react";
 import Child from "./Child";
@@ -237,19 +246,23 @@ export default Child;
 The `useMemo` hook is used to optimize performance by memoizing the result of a computation based on dependencies. The `useCallback` hook is used to memoize callback functions.
 
 Examples:
+
 ```jsx
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 const memoizedCallback = useCallback(() => doSomething(), [dependency]);
 ```
 
 #### useMemo
+
 ```
 conat variableName = useMemo(()=>{
     console.log("***************");
     return statement;
 },[state])
 ```
+
 Example
+
 ```
 import React,{useState,useMemo} from "react";
 
@@ -275,10 +288,12 @@ function App(){
 }
 ```
 
-###  Lifting State Up
-Lifting State Up or data transfer from Child to parent 
+### Lifting State Up
+
+Lifting State Up or data transfer from Child to parent
 
 Example:-
+
 ```
 // ParentComponent
 import Child from "./Child";
@@ -316,8 +331,8 @@ function child(props){
 export default Child;
 ```
 
-
 ### Registration Form in React
+
 ```
 import React,{useState,useEffect} from "react";
 
@@ -361,12 +376,13 @@ function Form(){
 }
 ```
 
-
 ### List rendering using map()
+
 Array.prototype.map() <br/>
     The map() methos creates a new array populated with the result of calling a provided function on every element in the calling array.
 
 Example:-
+
 ```
     const array = [1,2,3,4,5,6,7,8];
     const double = array.map(x => x*2);
@@ -374,7 +390,8 @@ Example:-
     //expected output: [2,4,6,8,10,12,14,16]
 ```
 
-####  map() with key
+#### map() with key
+
 ```
 const array = [1,2,3,4,5,6,7,8];
 const double = array.map((x,index)=> <h1 key={index}>{x*2}</h1>)
@@ -383,6 +400,7 @@ console.log(double);
 ```
 
 ### useState hook with object
+
 ```
 import react,{useState} from "react";
 
@@ -434,8 +452,8 @@ function App(){
 }
 ```
 
-
 ### ToDo List in React
+
 ```
 import react,{useState} from "react";
 
@@ -487,12 +505,15 @@ function TodoList() {
 ```
 
 ### useReducer hook
+
 #### What is useReducer?
+>
 > useReducer is a react hook used for state management.
 > Alternative of useState() hook.
 > Preferable for complete state management logic.
 
 Syntax
+
 ```
     const [state, dispatch] = useReducer(reducer, initialstate)
                                             ⬇
@@ -500,10 +521,12 @@ Syntax
 ```
 
 #### What is reducer?
+
 Reducer is a function accepts two paramiter <br/>
     newState=reducer(currentState, action)
 
 Example:-
+
 ```
 import React,{useReducer} from 'react';
 
@@ -537,11 +560,13 @@ export default Counter;
 ## Custom Hooks
 
 Custom Hooks are functions that encapsulate reusable logic. They can be used to abstract away complex logic from components and promote code reusability.
+
 #### Why to use Custom Hook?
+
 To remove the duplicated logic in components and we can extract that logic to custom hook.
 
-
 Example:
+
 ```jsx
 import { useState } from 'react';
 
@@ -580,6 +605,5 @@ function App(){
 
 export default App;
 ```
-
 
 🤍🤍🤍
