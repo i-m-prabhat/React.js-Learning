@@ -1,5 +1,6 @@
-import conf from "../conf/conf";
+import conf from '../conf/conf.js';
 import { Client, Account, ID } from "appwrite";
+
 
 export class AuthService
 {
@@ -8,8 +9,11 @@ export class AuthService
 
     constructor()
     {
-        this.client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectId);
-        this.account = new Account(this.client)
+        this.client
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectId);
+        this.account = new Account(this.client);
+
     }
 
     async createAccount({ email, password, name })
@@ -19,16 +23,15 @@ export class AuthService
             const userAccount = await this.account.create(ID.unique(), email, password, name);
             if (userAccount)
             {
-                //call another method
-                return this.login;
+                // call another method
+                return this.login({ email, password });
             } else
             {
                 return userAccount;
             }
         } catch (error)
         {
-            console.log("AppWrite service :: CreateAccount :: error", error);
-            // throw error;
+            throw error;
         }
     }
 
@@ -39,9 +42,7 @@ export class AuthService
             return await this.account.createEmailSession(email, password);
         } catch (error)
         {
-            console.log("AppWrite service :: login :: error", error);
-            // throw error;
-
+            throw error;
         }
     }
 
@@ -52,20 +53,25 @@ export class AuthService
             return await this.account.get();
         } catch (error)
         {
-            console.log("AppWrite service :: getCurrentUser :: error", error);
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
+
         return null;
     }
 
     async logout()
     {
+
         try
         {
             await this.account.deleteSessions();
         } catch (error)
         {
-            console.log("AppWrite service :: logout :: error", error);
-
+            console.log("Appwrite serive :: logout :: error", error);
         }
     }
 }
+
+const authService = new AuthService();
+
+export default authService
