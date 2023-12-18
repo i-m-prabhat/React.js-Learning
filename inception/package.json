@@ -1,0 +1,14 @@
+{
+  "name": "inception",
+  "version": "1.0.0",
+  "description": "this is the inception of react where we understand how react works.",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Prabhat Patel",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
