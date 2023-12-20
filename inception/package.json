@@ -2,13 +2,19 @@
   "name": "inception",
   "version": "1.0.0",
   "description": "this is the inception of react where we understand how react works.",
-  "main": "App.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "parcel:start": "rm -rf .parcel-cache &&npx parcel index.html",
+    "parcel:dev": "npx parcel index.html"
   },
   "author": "Prabhat Patel",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.10.3"
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
