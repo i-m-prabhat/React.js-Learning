@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest",
     "parcel:start": "rm -rf .parcel-cache &&npx parcel index.html",
-    "parcel:dev": "npx parcel index.html"
+    "parcel:dev": "npx parcel index.html",
+    "parcel:build": "npx parcel build index.html"
   },
   "author": "Prabhat Patel",
   "license": "ISC",
@@ -16,5 +17,10 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browserslist": [
+    "last 2 Chrome version",
+    "last 2 firefox version",
+    "last 2 version"
+  ]
 }

@@ -37,5 +37,6 @@ npx parcel index.html
 - Differential Bundling - support older browsers
 - Diagnostic
 - Error handling
+- HTTPs
 - Tree Shaking - remove unused code
 - Diffrent dev and prod bundless
